@@ -10,10 +10,11 @@
 
 ```ruby
 
-result = grammar_checker(text)
+verified = grammar_checker(text)
 
-* text is a string of words (e.g "This is a short piece of text.")
-* result is a boolean value (true or false) that repre
+# * text is a string of words (e.g "This is a short piece of text.")
+# * 'verified' is a boolean value (true or false) that represents if the given text meets the criteria
+# * the criteria is to start with a capital letter and end with suitable punctuation ( . or ? or ! )
 
 ```
 
@@ -22,32 +23,36 @@ result = grammar_checker(text)
 ```ruby
 
 # 1
-# calculate_reading_time("")
-# => 0
+# grammar_checker("")
+# => false
 
 # 2
-# calculate_reading_time("word") # less than 200 words
-# => 1
+# grammar_checker("this is not suitable")
+# => false
 
 # 3
-# calculate_reading_time("TWO_HUNDRED_WORDS")
-# => 1
+# grammar_checker("This nearly works")
+# => false
 
 # 4
-# calculate_reading_time("FIVE_HUNDRED_WORDS")
-# => 3
+# grammar_checker("this nearly works too!")
+# => false
 
 # 5
-# calculate_reading_time("ONE_THOUSAND_WORDS")
-# => 5
+# grammar_checker("This definitely works!")
+# => true
 
 # 6
-# calculate_reading_time("THREE_THOUSAND_WORDS")
-# => 15
+# grammar_checker("Different, but still works.")
+# => true
 
 # 7
-calculate_reading_time("EIGHT_THOUSAND_WORDS")
-# => 40
+# grammar_checker("Does this still work?")
+# => True
+
+# 8
+# grammar_checker(1234) # not a string
+# => false
 
 ```
 
