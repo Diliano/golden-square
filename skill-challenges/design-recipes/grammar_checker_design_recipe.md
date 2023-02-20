@@ -16,6 +16,8 @@ verified = grammar_checker(text)
 # * 'verified' is a boolean value (true or false) that represents if the given text meets the criteria
 # * the criteria is to start with a capital letter and end with suitable punctuation ( . or ? or ! )
 
+# * method returns an "Invalid input" error if provided an empty string or if the input is not a string
+
 ```
 
 ## 3. Create Examples as Tests
@@ -24,7 +26,7 @@ verified = grammar_checker(text)
 
 # 1
 # grammar_checker("")
-# => false
+# => "Invalid input"
 
 # 2
 # grammar_checker("this is not suitable")
@@ -48,10 +50,14 @@ verified = grammar_checker(text)
 
 # 7
 # grammar_checker("Does this still work?")
-# => True
+# => true
 
 # 8
 # grammar_checker(1234) # not a string
+# => "Invalid input"
+
+# 9
+# grammar_checker("Not a suitable ending,")
 # => false
 
 ```
